@@ -1,1 +1,22 @@
 C:\Users\Наташа\Documents\Visual Studio 2012\Projects\kurs\kurs\bin\Debug\kurs.exe.config
+C:\Users\Наташа\organize\kurs\bin\Debug\kurs.exe.config
+C:\Users\Наташа\organize\kurs\bin\Debug\kurs.exe
+C:\Users\Наташа\organize\kurs\bin\Debug\kurs.pdb
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.csprojResolveAssemblyReference.cache
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.Form1.resources
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.Properties.Resources.resources
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.csproj.GenerateResource.Cache
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.exe
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.pdb
+C:\Users\Наташа\organize\kurs\obj\Debug\kurs.BD_Group.resources
+D:\organize\kurs\bin\Debug\kurs.exe.config
+D:\organize\kurs\obj\Debug\kurs.exe
+D:\organize\kurs\obj\Debug\kurs.pdb
+D:\organize\kurs\bin\Debug\kurs.exe
+D:\organize\kurs\bin\Debug\kurs.pdb
+D:\organize\kurs\obj\Debug\kurs.csprojResolveAssemblyReference.cache
+D:\organize\kurs\obj\Debug\kurs.BD_Group.resources
+D:\organize\kurs\obj\Debug\kurs.Form1.resources
+D:\organize\kurs\obj\Debug\kurs.Properties.Resources.resources
+D:\organize\kurs\obj\Debug\kurs.csproj.GenerateResource.Cache
+D:\organize\kurs\obj\Debug\kurs.ok_candel.resources

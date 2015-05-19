@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,14 +50,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bdDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Group.Designer.cs">
+      <DependentUpon>BD_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DC.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DC.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ok_candel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ok_candel.Designer.cs">
+      <DependentUpon>ok_candel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BD_Group.resx">
+      <DependentUpon>BD_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ok_candel.resx">
+      <DependentUpon>ok_candel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +104,14 @@
     <None Include="bdDataSet.xss">
       <DependentUpon>bdDataSet.xsd</DependentUpon>
     </None>
+    <None Include="DC.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DC.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DC.dbml.layout">
+      <DependentUpon>DC.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

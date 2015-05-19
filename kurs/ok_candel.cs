@@ -10,25 +10,16 @@ using System.Windows.Forms;
 
 namespace kurs
 {
-    public partial class Form1 : Form
+    public partial class ok_candel : Form
     {
-        public Form1()
+        public ok_candel()
         {
             InitializeComponent();
         }
-        
-        private void button1_Click(object sender, EventArgs e)
+
+        private void ok_candel_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-
         }
-
-        private void TS_bDGroup_Click(object sender, EventArgs e)
-        {
-            BD_Group gr = new BD_Group();
-            gr.ShowDialog();
-
-        }
-
     }
 }
