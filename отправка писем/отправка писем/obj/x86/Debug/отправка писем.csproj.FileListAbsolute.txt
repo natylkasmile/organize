@@ -1,0 +1,9 @@
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка_писем.Form1.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка_писем.Properties.Resources.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка_писем.Авторизация.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка писем.csproj.GenerateResource.Cache
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\bin\Debug\отправка писем.exe
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\bin\Debug\отправка писем.pdb
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\bin\Debug\OpenPop.dll
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка писем.exe
+c:\users\svetlana\documents\visual studio 2010\Projects\отправка писем\отправка писем\obj\x86\Debug\отправка писем.pdb
