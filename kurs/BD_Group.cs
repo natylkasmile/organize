@@ -20,34 +20,35 @@ namespace kurs
 
         private void B_Add_Gr_Click(object sender, EventArgs e)
         {
-            Group G = new Group()
+            Peopl G = new Peopl()
             {
                 name_group = textBox1.Text
             };
-            dt.Group.InsertOnSubmit(G);
+            dt.Peopl.InsertOnSubmit(G);
             dt.SubmitChanges();
             dt = new DCDataContext();
-            GV_BD_Group.DataSource = dt.Group;
+            GV_BD_Group.DataSource = dt.Peopl;
            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var gr = dt.Group.Single(rec => rec.Id_group == Convert.ToInt32(GV_BD_Group.SelectedCells[0].Value));
+           // var gr = dt.Group.Single(rec => rec.Id_group == Convert.ToInt32(GV_BD_Group.SelectedCells[0].Value));
+            var gr = dt.Peopl.Single(rec => rec.Id_group == Convert.ToInt32(GV_BD_Group.SelectedRows[0].Cells[0].Value));
+           
             gr.name_group = textBox1.Text;
             dt.SubmitChanges();
-            GV_BD_Group.DataSource = dt.Group;
+            GV_BD_Group.DataSource = dt.Peopl;
         }
 
         private void GV_BD_Group_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = (GV_BD_Group.SelectedCells[1].Value).ToString();
-            
-        }
+               
+       }
 
         private void BD_Group_Load(object sender, EventArgs e)
         {
-            GV_BD_Group.DataSource = dt.Group;
+            GV_BD_Group.DataSource = dt.Peopl;
             
         }
 
@@ -57,10 +58,10 @@ namespace kurs
              oc.ShowDialog();
             if (oc.DialogResult == System.Windows.Forms.DialogResult.OK)
             {
-                dt.Group.DeleteOnSubmit(dt.Group.Where(elem => elem.Id_group == Convert.ToInt32(GV_BD_Group.SelectedCells[0].Value)).FirstOrDefault());
+                dt.Peopl.DeleteOnSubmit(dt.Peopl.Where(elem => elem.Id_group == Convert.ToInt32(GV_BD_Group.SelectedCells[0].Value)).FirstOrDefault());
                 dt.SubmitChanges();
                 dt = new DCDataContext();
-                GV_BD_Group.DataSource = dt.Group;
+                GV_BD_Group.DataSource = dt.Peopl;
             }
 
             else { }
@@ -70,16 +71,12 @@ namespace kurs
 
         }
 
-        private void GV_BD_Group_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GV_BD_Group_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = (GV_BD_Group.SelectedCells[1].Value).ToString();
-           
-        }
+           var  t = e.RowIndex;
+           textBox1.Text = (GV_BD_Group.SelectedCells[0].Value).ToString();
+            
 
-        private void GV_BD_Group_Click(object sender, EventArgs e)
-        {
-        //    textBox1.Text = (GV_BD_Group.SelectedCells[1].Value).ToString();
-            textBox1.Text = (GV_BD_Group.SelectedCells[0].Value).ToString(); 
         }
     }
 }

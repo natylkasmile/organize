@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Documents\Visual Studio 2012\Projects\kurs\kurs\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -45,16 +48,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_GR_Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_GR_Sub.Designer.cs">
+      <DependentUpon>Add_GR_Sub.cs</DependentUpon>
+    </Compile>
     <Compile Include="bdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Add_Stud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Add_Stud.Designer.cs">
+      <DependentUpon>BD_Add_Stud.cs</DependentUpon>
     </Compile>
     <Compile Include="BD_Group.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BD_Group.Designer.cs">
       <DependentUpon>BD_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Group_Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Group_Sub.Designer.cs">
+      <DependentUpon>BD_Group_Sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Lessons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Lessons.Designer.cs">
+      <DependentUpon>BD_Lessons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Mark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Mark.Designer.cs">
+      <DependentUpon>BD_Mark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Practice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Practice.Designer.cs">
+      <DependentUpon>BD_Practice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Schedule.Designer.cs">
+      <DependentUpon>BD_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Student.Designer.cs">
+      <DependentUpon>BD_Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Subject.Designer.cs">
+      <DependentUpon>BD_Subject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Theme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Theme.Designer.cs">
+      <DependentUpon>BD_Theme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Translate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Translate.Designer.cs">
+      <DependentUpon>BD_Translate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_T_Answ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_T_Answ.Designer.cs">
+      <DependentUpon>BD_T_Answ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_T_Quest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_T_Quest.Designer.cs">
+      <DependentUpon>BD_T_Quest.cs</DependentUpon>
     </Compile>
     <Compile Include="DC.designer.cs">
       <AutoGen>True</AutoGen>
@@ -73,16 +154,91 @@
     <Compile Include="ok_candel.Designer.cs">
       <DependentUpon>ok_candel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Otchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet.Designer.cs">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Otch_pic.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BD_Theoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_Theoria.Designer.cs">
+      <DependentUpon>BD_Theoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaveToPDF.cs" />
+    <Compile Include="Save_Rez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Save_Rez.Designer.cs">
+      <DependentUpon>Save_Rez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemOfMark.cs" />
+    <EmbeddedResource Include="Add_GR_Sub.resx">
+      <DependentUpon>Add_GR_Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Add_Stud.resx">
+      <DependentUpon>BD_Add_Stud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BD_Group.resx">
       <DependentUpon>BD_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Group_Sub.resx">
+      <DependentUpon>BD_Group_Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Lessons.resx">
+      <DependentUpon>BD_Lessons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Mark.resx">
+      <DependentUpon>BD_Mark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Practice.resx">
+      <DependentUpon>BD_Practice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Schedule.resx">
+      <DependentUpon>BD_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Student.resx">
+      <DependentUpon>BD_Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Subject.resx">
+      <DependentUpon>BD_Subject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Theme.resx">
+      <DependentUpon>BD_Theme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Theoria.resx">
+      <DependentUpon>BD_Theoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_Translate.resx">
+      <DependentUpon>BD_Translate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_T_Answ.resx">
+      <DependentUpon>BD_T_Answ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_T_Quest.resx">
+      <DependentUpon>BD_T_Quest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ok_candel.resx">
       <DependentUpon>ok_candel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Otchet.resx">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +249,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Save_Rez.resx">
+      <DependentUpon>Save_Rez.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bdDataSet.xsc">
       <DependentUpon>bdDataSet.xsd</DependentUpon>
     </None>
@@ -127,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

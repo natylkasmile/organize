@@ -30,27 +30,15 @@ namespace kurs
 		
     #region Определения метода расширяемости
     partial void OnCreated();
-    partial void InsertGroup(Group instance);
-    partial void UpdateGroup(Group instance);
-    partial void DeleteGroup(Group instance);
-    partial void InsertGroup_Sub(Group_Sub instance);
-    partial void UpdateGroup_Sub(Group_Sub instance);
-    partial void DeleteGroup_Sub(Group_Sub instance);
     partial void InsertLessons(Lessons instance);
     partial void UpdateLessons(Lessons instance);
     partial void DeleteLessons(Lessons instance);
-    partial void InsertMark(Mark instance);
-    partial void UpdateMark(Mark instance);
-    partial void DeleteMark(Mark instance);
     partial void InsertPractice(Practice instance);
     partial void UpdatePractice(Practice instance);
     partial void DeletePractice(Practice instance);
     partial void InsertSchedule(Schedule instance);
     partial void UpdateSchedule(Schedule instance);
     partial void DeleteSchedule(Schedule instance);
-    partial void InsertStudent(Student instance);
-    partial void UpdateStudent(Student instance);
-    partial void DeleteStudent(Student instance);
     partial void InsertSubject(Subject instance);
     partial void UpdateSubject(Subject instance);
     partial void DeleteSubject(Subject instance);
@@ -69,6 +57,18 @@ namespace kurs
     partial void InsertType_question(Type_question instance);
     partial void UpdateType_question(Type_question instance);
     partial void DeleteType_question(Type_question instance);
+    partial void InsertMark(Mark instance);
+    partial void UpdateMark(Mark instance);
+    partial void DeleteMark(Mark instance);
+    partial void InsertGroup_Sub(Group_Sub instance);
+    partial void UpdateGroup_Sub(Group_Sub instance);
+    partial void DeleteGroup_Sub(Group_Sub instance);
+    partial void InsertPeopl(Peopl instance);
+    partial void UpdatePeopl(Peopl instance);
+    partial void DeletePeopl(Peopl instance);
+    partial void InsertStudent(Student instance);
+    partial void UpdateStudent(Student instance);
+    partial void DeleteStudent(Student instance);
     #endregion
 		
 		public DCDataContext() : 
@@ -101,35 +101,11 @@ namespace kurs
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Group> Group
-		{
-			get
-			{
-				return this.GetTable<Group>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Group_Sub> Group_Sub
-		{
-			get
-			{
-				return this.GetTable<Group_Sub>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Lessons> Lessons
 		{
 			get
 			{
 				return this.GetTable<Lessons>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Mark> Mark
-		{
-			get
-			{
-				return this.GetTable<Mark>();
 			}
 		}
 		
@@ -146,14 +122,6 @@ namespace kurs
 			get
 			{
 				return this.GetTable<Schedule>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Student> Student
-		{
-			get
-			{
-				return this.GetTable<Student>();
 			}
 		}
 		
@@ -204,367 +172,37 @@ namespace kurs
 				return this.GetTable<Type_question>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Group]")]
-	public partial class Group : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id_group;
-		
-		private string _name_group;
-		
-		private EntitySet<Group_Sub> _Group_Sub;
-		
-		private EntitySet<Student> _Student;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnId_groupChanging(int value);
-    partial void OnId_groupChanged();
-    partial void Onname_groupChanging(string value);
-    partial void Onname_groupChanged();
-    #endregion
-		
-		public Group()
-		{
-			this._Group_Sub = new EntitySet<Group_Sub>(new Action<Group_Sub>(this.attach_Group_Sub), new Action<Group_Sub>(this.detach_Group_Sub));
-			this._Student = new EntitySet<Student>(new Action<Student>(this.attach_Student), new Action<Student>(this.detach_Student));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_group", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id_group
+		public System.Data.Linq.Table<Mark> Mark
 		{
 			get
 			{
-				return this._Id_group;
-			}
-			set
-			{
-				if ((this._Id_group != value))
-				{
-					this.OnId_groupChanging(value);
-					this.SendPropertyChanging();
-					this._Id_group = value;
-					this.SendPropertyChanged("Id_group");
-					this.OnId_groupChanged();
-				}
+				return this.GetTable<Mark>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name_group", DbType="NChar(15) NOT NULL", CanBeNull=false)]
-		public string name_group
+		public System.Data.Linq.Table<Group_Sub> Group_Sub
 		{
 			get
 			{
-				return this._name_group;
-			}
-			set
-			{
-				if ((this._name_group != value))
-				{
-					this.Onname_groupChanging(value);
-					this.SendPropertyChanging();
-					this._name_group = value;
-					this.SendPropertyChanged("name_group");
-					this.Onname_groupChanged();
-				}
+				return this.GetTable<Group_Sub>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Group_Sub", Storage="_Group_Sub", ThisKey="Id_group", OtherKey="groupID")]
-		public EntitySet<Group_Sub> Group_Sub
+		public System.Data.Linq.Table<Peopl> Peopl
 		{
 			get
 			{
-				return this._Group_Sub;
-			}
-			set
-			{
-				this._Group_Sub.Assign(value);
+				return this.GetTable<Peopl>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Student", Storage="_Student", ThisKey="Id_group", OtherKey="groupID")]
-		public EntitySet<Student> Student
+		public System.Data.Linq.Table<Student> Student
 		{
 			get
 			{
-				return this._Student;
+				return this.GetTable<Student>();
 			}
-			set
-			{
-				this._Student.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Group_Sub(Group_Sub entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = this;
-		}
-		
-		private void detach_Group_Sub(Group_Sub entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = null;
-		}
-		
-		private void attach_Student(Student entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = this;
-		}
-		
-		private void detach_Student(Student entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Group_Sub")]
-	public partial class Group_Sub : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id_rel;
-		
-		private System.Nullable<int> _groupID;
-		
-		private System.Nullable<int> _subID;
-		
-		private EntitySet<Schedule> _Schedule;
-		
-		private EntityRef<Group> _Group;
-		
-		private EntityRef<Subject> _Subject;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnId_relChanging(int value);
-    partial void OnId_relChanged();
-    partial void OngroupIDChanging(System.Nullable<int> value);
-    partial void OngroupIDChanged();
-    partial void OnsubIDChanging(System.Nullable<int> value);
-    partial void OnsubIDChanged();
-    #endregion
-		
-		public Group_Sub()
-		{
-			this._Schedule = new EntitySet<Schedule>(new Action<Schedule>(this.attach_Schedule), new Action<Schedule>(this.detach_Schedule));
-			this._Group = default(EntityRef<Group>);
-			this._Subject = default(EntityRef<Subject>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_rel", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id_rel
-		{
-			get
-			{
-				return this._Id_rel;
-			}
-			set
-			{
-				if ((this._Id_rel != value))
-				{
-					this.OnId_relChanging(value);
-					this.SendPropertyChanging();
-					this._Id_rel = value;
-					this.SendPropertyChanged("Id_rel");
-					this.OnId_relChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="Int")]
-		public System.Nullable<int> groupID
-		{
-			get
-			{
-				return this._groupID;
-			}
-			set
-			{
-				if ((this._groupID != value))
-				{
-					if (this._Group.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OngroupIDChanging(value);
-					this.SendPropertyChanging();
-					this._groupID = value;
-					this.SendPropertyChanged("groupID");
-					this.OngroupIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subID", DbType="Int")]
-		public System.Nullable<int> subID
-		{
-			get
-			{
-				return this._subID;
-			}
-			set
-			{
-				if ((this._subID != value))
-				{
-					if (this._Subject.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnsubIDChanging(value);
-					this.SendPropertyChanging();
-					this._subID = value;
-					this.SendPropertyChanged("subID");
-					this.OnsubIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Sub_Schedule", Storage="_Schedule", ThisKey="Id_rel", OtherKey="relID")]
-		public EntitySet<Schedule> Schedule
-		{
-			get
-			{
-				return this._Schedule;
-			}
-			set
-			{
-				this._Schedule.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Group_Sub", Storage="_Group", ThisKey="groupID", OtherKey="Id_group", IsForeignKey=true)]
-		public Group Group
-		{
-			get
-			{
-				return this._Group.Entity;
-			}
-			set
-			{
-				Group previousValue = this._Group.Entity;
-				if (((previousValue != value) 
-							|| (this._Group.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Group.Entity = null;
-						previousValue.Group_Sub.Remove(this);
-					}
-					this._Group.Entity = value;
-					if ((value != null))
-					{
-						value.Group_Sub.Add(this);
-						this._groupID = value.Id_group;
-					}
-					else
-					{
-						this._groupID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Group");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Group_Sub", Storage="_Subject", ThisKey="subID", OtherKey="Id_sub", IsForeignKey=true)]
-		public Subject Subject
-		{
-			get
-			{
-				return this._Subject.Entity;
-			}
-			set
-			{
-				Subject previousValue = this._Subject.Entity;
-				if (((previousValue != value) 
-							|| (this._Subject.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Subject.Entity = null;
-						previousValue.Group_Sub.Remove(this);
-					}
-					this._Subject.Entity = value;
-					if ((value != null))
-					{
-						value.Group_Sub.Add(this);
-						this._subID = value.Id_sub;
-					}
-					else
-					{
-						this._subID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Subject");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Schedule(Schedule entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group_Sub = this;
-		}
-		
-		private void detach_Schedule(Schedule entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group_Sub = null;
 		}
 	}
 	
@@ -578,11 +216,11 @@ namespace kurs
 		
 		private string _type_les;
 		
-		private EntitySet<Mark> _Mark;
-		
 		private EntitySet<Schedule> _Schedule;
 		
 		private EntitySet<Translate> _Translate;
+		
+		private EntitySet<Mark> _Mark;
 		
     #region Определения метода расширяемости
     partial void OnLoaded();
@@ -596,9 +234,9 @@ namespace kurs
 		
 		public Lessons()
 		{
-			this._Mark = new EntitySet<Mark>(new Action<Mark>(this.attach_Mark), new Action<Mark>(this.detach_Mark));
 			this._Schedule = new EntitySet<Schedule>(new Action<Schedule>(this.attach_Schedule), new Action<Schedule>(this.detach_Schedule));
 			this._Translate = new EntitySet<Translate>(new Action<Translate>(this.attach_Translate), new Action<Translate>(this.detach_Translate));
+			this._Mark = new EntitySet<Mark>(new Action<Mark>(this.attach_Mark), new Action<Mark>(this.detach_Mark));
 			OnCreated();
 		}
 		
@@ -642,19 +280,6 @@ namespace kurs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lessons_Mark", Storage="_Mark", ThisKey="Id_les", OtherKey="lesID")]
-		public EntitySet<Mark> Mark
-		{
-			get
-			{
-				return this._Mark;
-			}
-			set
-			{
-				this._Mark.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lessons_Schedule", Storage="_Schedule", ThisKey="Id_les", OtherKey="lesID")]
 		public EntitySet<Schedule> Schedule
 		{
@@ -681,6 +306,19 @@ namespace kurs
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lessons_Mark", Storage="_Mark", ThisKey="Id_les", OtherKey="lesID")]
+		public EntitySet<Mark> Mark
+		{
+			get
+			{
+				return this._Mark;
+			}
+			set
+			{
+				this._Mark.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -699,18 +337,6 @@ namespace kurs
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Lessons = this;
-		}
-		
-		private void detach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Lessons = null;
 		}
 		
 		private void attach_Schedule(Schedule entity)
@@ -736,310 +362,17 @@ namespace kurs
 			this.SendPropertyChanging();
 			entity.Lessons = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mark")]
-	public partial class Mark : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id_mark;
-		
-		private System.Nullable<int> _point;
-		
-		private string _date_p;
-		
-		private System.Nullable<int> _lesID;
-		
-		private System.Nullable<int> _studID;
-		
-		private System.Nullable<int> _subID;
-		
-		private EntityRef<Lessons> _Lessons;
-		
-		private EntityRef<Student> _Student;
-		
-		private EntityRef<Subject> _Subject;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnId_markChanging(int value);
-    partial void OnId_markChanged();
-    partial void OnpointChanging(System.Nullable<int> value);
-    partial void OnpointChanged();
-    partial void Ondate_pChanging(string value);
-    partial void Ondate_pChanged();
-    partial void OnlesIDChanging(System.Nullable<int> value);
-    partial void OnlesIDChanged();
-    partial void OnstudIDChanging(System.Nullable<int> value);
-    partial void OnstudIDChanged();
-    partial void OnsubIDChanging(System.Nullable<int> value);
-    partial void OnsubIDChanged();
-    #endregion
-		
-		public Mark()
+		private void attach_Mark(Mark entity)
 		{
-			this._Lessons = default(EntityRef<Lessons>);
-			this._Student = default(EntityRef<Student>);
-			this._Subject = default(EntityRef<Subject>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.Lessons = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_mark", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id_mark
+		private void detach_Mark(Mark entity)
 		{
-			get
-			{
-				return this._Id_mark;
-			}
-			set
-			{
-				if ((this._Id_mark != value))
-				{
-					this.OnId_markChanging(value);
-					this.SendPropertyChanging();
-					this._Id_mark = value;
-					this.SendPropertyChanged("Id_mark");
-					this.OnId_markChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="Int")]
-		public System.Nullable<int> point
-		{
-			get
-			{
-				return this._point;
-			}
-			set
-			{
-				if ((this._point != value))
-				{
-					this.OnpointChanging(value);
-					this.SendPropertyChanging();
-					this._point = value;
-					this.SendPropertyChanged("point");
-					this.OnpointChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_p", DbType="NChar(10)")]
-		public string date_p
-		{
-			get
-			{
-				return this._date_p;
-			}
-			set
-			{
-				if ((this._date_p != value))
-				{
-					this.Ondate_pChanging(value);
-					this.SendPropertyChanging();
-					this._date_p = value;
-					this.SendPropertyChanged("date_p");
-					this.Ondate_pChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lesID", DbType="Int")]
-		public System.Nullable<int> lesID
-		{
-			get
-			{
-				return this._lesID;
-			}
-			set
-			{
-				if ((this._lesID != value))
-				{
-					if (this._Lessons.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnlesIDChanging(value);
-					this.SendPropertyChanging();
-					this._lesID = value;
-					this.SendPropertyChanged("lesID");
-					this.OnlesIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studID", DbType="Int")]
-		public System.Nullable<int> studID
-		{
-			get
-			{
-				return this._studID;
-			}
-			set
-			{
-				if ((this._studID != value))
-				{
-					if (this._Student.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnstudIDChanging(value);
-					this.SendPropertyChanging();
-					this._studID = value;
-					this.SendPropertyChanged("studID");
-					this.OnstudIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subID", DbType="Int")]
-		public System.Nullable<int> subID
-		{
-			get
-			{
-				return this._subID;
-			}
-			set
-			{
-				if ((this._subID != value))
-				{
-					if (this._Subject.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnsubIDChanging(value);
-					this.SendPropertyChanging();
-					this._subID = value;
-					this.SendPropertyChanged("subID");
-					this.OnsubIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lessons_Mark", Storage="_Lessons", ThisKey="lesID", OtherKey="Id_les", IsForeignKey=true)]
-		public Lessons Lessons
-		{
-			get
-			{
-				return this._Lessons.Entity;
-			}
-			set
-			{
-				Lessons previousValue = this._Lessons.Entity;
-				if (((previousValue != value) 
-							|| (this._Lessons.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Lessons.Entity = null;
-						previousValue.Mark.Remove(this);
-					}
-					this._Lessons.Entity = value;
-					if ((value != null))
-					{
-						value.Mark.Add(this);
-						this._lesID = value.Id_les;
-					}
-					else
-					{
-						this._lesID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Lessons");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Mark", Storage="_Student", ThisKey="studID", OtherKey="Id_student", IsForeignKey=true)]
-		public Student Student
-		{
-			get
-			{
-				return this._Student.Entity;
-			}
-			set
-			{
-				Student previousValue = this._Student.Entity;
-				if (((previousValue != value) 
-							|| (this._Student.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student.Entity = null;
-						previousValue.Mark.Remove(this);
-					}
-					this._Student.Entity = value;
-					if ((value != null))
-					{
-						value.Mark.Add(this);
-						this._studID = value.Id_student;
-					}
-					else
-					{
-						this._studID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Student");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Mark", Storage="_Subject", ThisKey="subID", OtherKey="Id_sub", IsForeignKey=true)]
-		public Subject Subject
-		{
-			get
-			{
-				return this._Subject.Entity;
-			}
-			set
-			{
-				Subject previousValue = this._Subject.Entity;
-				if (((previousValue != value) 
-							|| (this._Subject.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Subject.Entity = null;
-						previousValue.Mark.Remove(this);
-					}
-					this._Subject.Entity = value;
-					if ((value != null))
-					{
-						value.Mark.Add(this);
-						this._subID = value.Id_sub;
-					}
-					else
-					{
-						this._subID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Subject");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			this.SendPropertyChanging();
+			entity.Lessons = null;
 		}
 	}
 	
@@ -1212,8 +545,6 @@ namespace kurs
 		
 		private EntityRef<Lessons> _Lessons;
 		
-		private EntityRef<Group_Sub> _Group_Sub;
-		
     #region Определения метода расширяемости
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1233,7 +564,6 @@ namespace kurs
 		public Schedule()
 		{
 			this._Lessons = default(EntityRef<Lessons>);
-			this._Group_Sub = default(EntityRef<Group_Sub>);
 			OnCreated();
 		}
 		
@@ -1332,10 +662,6 @@ namespace kurs
 			{
 				if ((this._relID != value))
 				{
-					if (this._Group_Sub.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnrelIDChanging(value);
 					this.SendPropertyChanging();
 					this._relID = value;
@@ -1379,40 +705,6 @@ namespace kurs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Sub_Schedule", Storage="_Group_Sub", ThisKey="relID", OtherKey="Id_rel", IsForeignKey=true)]
-		public Group_Sub Group_Sub
-		{
-			get
-			{
-				return this._Group_Sub.Entity;
-			}
-			set
-			{
-				Group_Sub previousValue = this._Group_Sub.Entity;
-				if (((previousValue != value) 
-							|| (this._Group_Sub.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Group_Sub.Entity = null;
-						previousValue.Schedule.Remove(this);
-					}
-					this._Group_Sub.Entity = value;
-					if ((value != null))
-					{
-						value.Schedule.Add(this);
-						this._relID = value.Id_rel;
-					}
-					else
-					{
-						this._relID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Group_Sub");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1431,209 +723,6 @@ namespace kurs
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student")]
-	public partial class Student : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id_student;
-		
-		private string _FIO;
-		
-		private string _mail;
-		
-		private System.Nullable<int> _groupID;
-		
-		private EntitySet<Mark> _Mark;
-		
-		private EntityRef<Group> _Group;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnId_studentChanging(int value);
-    partial void OnId_studentChanged();
-    partial void OnFIOChanging(string value);
-    partial void OnFIOChanged();
-    partial void OnmailChanging(string value);
-    partial void OnmailChanged();
-    partial void OngroupIDChanging(System.Nullable<int> value);
-    partial void OngroupIDChanged();
-    #endregion
-		
-		public Student()
-		{
-			this._Mark = new EntitySet<Mark>(new Action<Mark>(this.attach_Mark), new Action<Mark>(this.detach_Mark));
-			this._Group = default(EntityRef<Group>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_student", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id_student
-		{
-			get
-			{
-				return this._Id_student;
-			}
-			set
-			{
-				if ((this._Id_student != value))
-				{
-					this.OnId_studentChanging(value);
-					this.SendPropertyChanging();
-					this._Id_student = value;
-					this.SendPropertyChanged("Id_student");
-					this.OnId_studentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FIO", DbType="NVarChar(50)")]
-		public string FIO
-		{
-			get
-			{
-				return this._FIO;
-			}
-			set
-			{
-				if ((this._FIO != value))
-				{
-					this.OnFIOChanging(value);
-					this.SendPropertyChanging();
-					this._FIO = value;
-					this.SendPropertyChanged("FIO");
-					this.OnFIOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(15)")]
-		public string mail
-		{
-			get
-			{
-				return this._mail;
-			}
-			set
-			{
-				if ((this._mail != value))
-				{
-					this.OnmailChanging(value);
-					this.SendPropertyChanging();
-					this._mail = value;
-					this.SendPropertyChanged("mail");
-					this.OnmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="Int")]
-		public System.Nullable<int> groupID
-		{
-			get
-			{
-				return this._groupID;
-			}
-			set
-			{
-				if ((this._groupID != value))
-				{
-					if (this._Group.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OngroupIDChanging(value);
-					this.SendPropertyChanging();
-					this._groupID = value;
-					this.SendPropertyChanged("groupID");
-					this.OngroupIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Mark", Storage="_Mark", ThisKey="Id_student", OtherKey="studID")]
-		public EntitySet<Mark> Mark
-		{
-			get
-			{
-				return this._Mark;
-			}
-			set
-			{
-				this._Mark.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Student", Storage="_Group", ThisKey="groupID", OtherKey="Id_group", IsForeignKey=true)]
-		public Group Group
-		{
-			get
-			{
-				return this._Group.Entity;
-			}
-			set
-			{
-				Group previousValue = this._Group.Entity;
-				if (((previousValue != value) 
-							|| (this._Group.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Group.Entity = null;
-						previousValue.Student.Remove(this);
-					}
-					this._Group.Entity = value;
-					if ((value != null))
-					{
-						value.Student.Add(this);
-						this._groupID = value.Id_group;
-					}
-					else
-					{
-						this._groupID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Group");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = this;
-		}
-		
-		private void detach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = null;
 		}
 	}
 	
@@ -1647,13 +736,13 @@ namespace kurs
 		
 		private string _name_sub;
 		
-		private EntitySet<Group_Sub> _Group_Sub;
-		
-		private EntitySet<Mark> _Mark;
-		
 		private EntitySet<Theme> _Theme;
 		
 		private EntitySet<Translate> _Translate;
+		
+		private EntitySet<Mark> _Mark;
+		
+		private EntitySet<Group_Sub> _Group_Sub;
 		
     #region Определения метода расширяемости
     partial void OnLoaded();
@@ -1667,10 +756,10 @@ namespace kurs
 		
 		public Subject()
 		{
-			this._Group_Sub = new EntitySet<Group_Sub>(new Action<Group_Sub>(this.attach_Group_Sub), new Action<Group_Sub>(this.detach_Group_Sub));
-			this._Mark = new EntitySet<Mark>(new Action<Mark>(this.attach_Mark), new Action<Mark>(this.detach_Mark));
 			this._Theme = new EntitySet<Theme>(new Action<Theme>(this.attach_Theme), new Action<Theme>(this.detach_Theme));
 			this._Translate = new EntitySet<Translate>(new Action<Translate>(this.attach_Translate), new Action<Translate>(this.detach_Translate));
+			this._Mark = new EntitySet<Mark>(new Action<Mark>(this.attach_Mark), new Action<Mark>(this.detach_Mark));
+			this._Group_Sub = new EntitySet<Group_Sub>(new Action<Group_Sub>(this.attach_Group_Sub), new Action<Group_Sub>(this.detach_Group_Sub));
 			OnCreated();
 		}
 		
@@ -1714,32 +803,6 @@ namespace kurs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Group_Sub", Storage="_Group_Sub", ThisKey="Id_sub", OtherKey="subID")]
-		public EntitySet<Group_Sub> Group_Sub
-		{
-			get
-			{
-				return this._Group_Sub;
-			}
-			set
-			{
-				this._Group_Sub.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Mark", Storage="_Mark", ThisKey="Id_sub", OtherKey="subID")]
-		public EntitySet<Mark> Mark
-		{
-			get
-			{
-				return this._Mark;
-			}
-			set
-			{
-				this._Mark.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Theme", Storage="_Theme", ThisKey="Id_sub", OtherKey="subID")]
 		public EntitySet<Theme> Theme
 		{
@@ -1766,6 +829,32 @@ namespace kurs
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Mark", Storage="_Mark", ThisKey="Id_sub", OtherKey="subID")]
+		public EntitySet<Mark> Mark
+		{
+			get
+			{
+				return this._Mark;
+			}
+			set
+			{
+				this._Mark.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Group_Sub", Storage="_Group_Sub", ThisKey="Id_sub", OtherKey="subID")]
+		public EntitySet<Group_Sub> Group_Sub
+		{
+			get
+			{
+				return this._Group_Sub;
+			}
+			set
+			{
+				this._Group_Sub.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1784,30 +873,6 @@ namespace kurs
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Group_Sub(Group_Sub entity)
-		{
-			this.SendPropertyChanging();
-			entity.Subject = this;
-		}
-		
-		private void detach_Group_Sub(Group_Sub entity)
-		{
-			this.SendPropertyChanging();
-			entity.Subject = null;
-		}
-		
-		private void attach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Subject = this;
-		}
-		
-		private void detach_Mark(Mark entity)
-		{
-			this.SendPropertyChanging();
-			entity.Subject = null;
 		}
 		
 		private void attach_Theme(Theme entity)
@@ -1829,6 +894,30 @@ namespace kurs
 		}
 		
 		private void detach_Translate(Translate entity)
+		{
+			this.SendPropertyChanging();
+			entity.Subject = null;
+		}
+		
+		private void attach_Mark(Mark entity)
+		{
+			this.SendPropertyChanging();
+			entity.Subject = this;
+		}
+		
+		private void detach_Mark(Mark entity)
+		{
+			this.SendPropertyChanging();
+			entity.Subject = null;
+		}
+		
+		private void attach_Group_Sub(Group_Sub entity)
+		{
+			this.SendPropertyChanging();
+			entity.Subject = this;
+		}
+		
+		private void detach_Group_Sub(Group_Sub entity)
 		{
 			this.SendPropertyChanging();
 			entity.Subject = null;
@@ -2743,6 +1832,779 @@ namespace kurs
 		{
 			this.SendPropertyChanging();
 			entity.Type_question = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mark")]
+	public partial class Mark : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_mark;
+		
+		private System.Nullable<int> _point;
+		
+		private System.Nullable<System.DateTimeOffset> _date_p;
+		
+		private System.Nullable<int> _lesID;
+		
+		private System.Nullable<int> _studID;
+		
+		private System.Nullable<int> _subID;
+		
+		private EntityRef<Lessons> _Lessons;
+		
+		private EntityRef<Subject> _Subject;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_markChanging(int value);
+    partial void OnId_markChanged();
+    partial void OnpointChanging(System.Nullable<int> value);
+    partial void OnpointChanged();
+    partial void Ondate_pChanging(System.Nullable<System.DateTimeOffset> value);
+    partial void Ondate_pChanged();
+    partial void OnlesIDChanging(System.Nullable<int> value);
+    partial void OnlesIDChanged();
+    partial void OnstudIDChanging(System.Nullable<int> value);
+    partial void OnstudIDChanged();
+    partial void OnsubIDChanging(System.Nullable<int> value);
+    partial void OnsubIDChanged();
+    #endregion
+		
+		public Mark()
+		{
+			this._Lessons = default(EntityRef<Lessons>);
+			this._Subject = default(EntityRef<Subject>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_mark", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_mark
+		{
+			get
+			{
+				return this._Id_mark;
+			}
+			set
+			{
+				if ((this._Id_mark != value))
+				{
+					this.OnId_markChanging(value);
+					this.SendPropertyChanging();
+					this._Id_mark = value;
+					this.SendPropertyChanged("Id_mark");
+					this.OnId_markChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="Int")]
+		public System.Nullable<int> point
+		{
+			get
+			{
+				return this._point;
+			}
+			set
+			{
+				if ((this._point != value))
+				{
+					this.OnpointChanging(value);
+					this.SendPropertyChanging();
+					this._point = value;
+					this.SendPropertyChanged("point");
+					this.OnpointChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_p", DbType="DateTimeOffset")]
+		public System.Nullable<System.DateTimeOffset> date_p
+		{
+			get
+			{
+				return this._date_p;
+			}
+			set
+			{
+				if ((this._date_p != value))
+				{
+					this.Ondate_pChanging(value);
+					this.SendPropertyChanging();
+					this._date_p = value;
+					this.SendPropertyChanged("date_p");
+					this.Ondate_pChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lesID", DbType="Int")]
+		public System.Nullable<int> lesID
+		{
+			get
+			{
+				return this._lesID;
+			}
+			set
+			{
+				if ((this._lesID != value))
+				{
+					if (this._Lessons.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnlesIDChanging(value);
+					this.SendPropertyChanging();
+					this._lesID = value;
+					this.SendPropertyChanged("lesID");
+					this.OnlesIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studID", DbType="Int")]
+		public System.Nullable<int> studID
+		{
+			get
+			{
+				return this._studID;
+			}
+			set
+			{
+				if ((this._studID != value))
+				{
+					this.OnstudIDChanging(value);
+					this.SendPropertyChanging();
+					this._studID = value;
+					this.SendPropertyChanged("studID");
+					this.OnstudIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subID", DbType="Int")]
+		public System.Nullable<int> subID
+		{
+			get
+			{
+				return this._subID;
+			}
+			set
+			{
+				if ((this._subID != value))
+				{
+					if (this._Subject.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnsubIDChanging(value);
+					this.SendPropertyChanging();
+					this._subID = value;
+					this.SendPropertyChanged("subID");
+					this.OnsubIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lessons_Mark", Storage="_Lessons", ThisKey="lesID", OtherKey="Id_les", IsForeignKey=true)]
+		public Lessons Lessons
+		{
+			get
+			{
+				return this._Lessons.Entity;
+			}
+			set
+			{
+				Lessons previousValue = this._Lessons.Entity;
+				if (((previousValue != value) 
+							|| (this._Lessons.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Lessons.Entity = null;
+						previousValue.Mark.Remove(this);
+					}
+					this._Lessons.Entity = value;
+					if ((value != null))
+					{
+						value.Mark.Add(this);
+						this._lesID = value.Id_les;
+					}
+					else
+					{
+						this._lesID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Lessons");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Mark", Storage="_Subject", ThisKey="subID", OtherKey="Id_sub", IsForeignKey=true)]
+		public Subject Subject
+		{
+			get
+			{
+				return this._Subject.Entity;
+			}
+			set
+			{
+				Subject previousValue = this._Subject.Entity;
+				if (((previousValue != value) 
+							|| (this._Subject.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Subject.Entity = null;
+						previousValue.Mark.Remove(this);
+					}
+					this._Subject.Entity = value;
+					if ((value != null))
+					{
+						value.Mark.Add(this);
+						this._subID = value.Id_sub;
+					}
+					else
+					{
+						this._subID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Subject");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Group_Sub")]
+	public partial class Group_Sub : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_rel;
+		
+		private System.Nullable<int> _groupID;
+		
+		private System.Nullable<int> _subID;
+		
+		private EntityRef<Subject> _Subject;
+		
+		private EntityRef<Peopl> _Peopl;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_relChanging(int value);
+    partial void OnId_relChanged();
+    partial void OngroupIDChanging(System.Nullable<int> value);
+    partial void OngroupIDChanged();
+    partial void OnsubIDChanging(System.Nullable<int> value);
+    partial void OnsubIDChanged();
+    #endregion
+		
+		public Group_Sub()
+		{
+			this._Subject = default(EntityRef<Subject>);
+			this._Peopl = default(EntityRef<Peopl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_rel", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_rel
+		{
+			get
+			{
+				return this._Id_rel;
+			}
+			set
+			{
+				if ((this._Id_rel != value))
+				{
+					this.OnId_relChanging(value);
+					this.SendPropertyChanging();
+					this._Id_rel = value;
+					this.SendPropertyChanged("Id_rel");
+					this.OnId_relChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="Int")]
+		public System.Nullable<int> groupID
+		{
+			get
+			{
+				return this._groupID;
+			}
+			set
+			{
+				if ((this._groupID != value))
+				{
+					if (this._Peopl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OngroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._groupID = value;
+					this.SendPropertyChanged("groupID");
+					this.OngroupIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subID", DbType="Int")]
+		public System.Nullable<int> subID
+		{
+			get
+			{
+				return this._subID;
+			}
+			set
+			{
+				if ((this._subID != value))
+				{
+					if (this._Subject.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnsubIDChanging(value);
+					this.SendPropertyChanging();
+					this._subID = value;
+					this.SendPropertyChanged("subID");
+					this.OnsubIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Subject_Group_Sub", Storage="_Subject", ThisKey="subID", OtherKey="Id_sub", IsForeignKey=true)]
+		public Subject Subject
+		{
+			get
+			{
+				return this._Subject.Entity;
+			}
+			set
+			{
+				Subject previousValue = this._Subject.Entity;
+				if (((previousValue != value) 
+							|| (this._Subject.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Subject.Entity = null;
+						previousValue.Group_Sub.Remove(this);
+					}
+					this._Subject.Entity = value;
+					if ((value != null))
+					{
+						value.Group_Sub.Add(this);
+						this._subID = value.Id_sub;
+					}
+					else
+					{
+						this._subID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Subject");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Peopl_Group_Sub", Storage="_Peopl", ThisKey="groupID", OtherKey="Id_group", IsForeignKey=true)]
+		public Peopl Peopl
+		{
+			get
+			{
+				return this._Peopl.Entity;
+			}
+			set
+			{
+				Peopl previousValue = this._Peopl.Entity;
+				if (((previousValue != value) 
+							|| (this._Peopl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Peopl.Entity = null;
+						previousValue.Group_Sub.Remove(this);
+					}
+					this._Peopl.Entity = value;
+					if ((value != null))
+					{
+						value.Group_Sub.Add(this);
+						this._groupID = value.Id_group;
+					}
+					else
+					{
+						this._groupID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Peopl");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Peopl")]
+	public partial class Peopl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_group;
+		
+		private string _name_group;
+		
+		private EntitySet<Group_Sub> _Group_Sub;
+		
+		private EntitySet<Student> _Student;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_groupChanging(int value);
+    partial void OnId_groupChanged();
+    partial void Onname_groupChanging(string value);
+    partial void Onname_groupChanged();
+    #endregion
+		
+		public Peopl()
+		{
+			this._Group_Sub = new EntitySet<Group_Sub>(new Action<Group_Sub>(this.attach_Group_Sub), new Action<Group_Sub>(this.detach_Group_Sub));
+			this._Student = new EntitySet<Student>(new Action<Student>(this.attach_Student), new Action<Student>(this.detach_Student));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_group", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_group
+		{
+			get
+			{
+				return this._Id_group;
+			}
+			set
+			{
+				if ((this._Id_group != value))
+				{
+					this.OnId_groupChanging(value);
+					this.SendPropertyChanging();
+					this._Id_group = value;
+					this.SendPropertyChanged("Id_group");
+					this.OnId_groupChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name_group", DbType="NChar(15) NOT NULL", CanBeNull=false)]
+		public string name_group
+		{
+			get
+			{
+				return this._name_group;
+			}
+			set
+			{
+				if ((this._name_group != value))
+				{
+					this.Onname_groupChanging(value);
+					this.SendPropertyChanging();
+					this._name_group = value;
+					this.SendPropertyChanged("name_group");
+					this.Onname_groupChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Peopl_Group_Sub", Storage="_Group_Sub", ThisKey="Id_group", OtherKey="groupID")]
+		public EntitySet<Group_Sub> Group_Sub
+		{
+			get
+			{
+				return this._Group_Sub;
+			}
+			set
+			{
+				this._Group_Sub.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Peopl_Student", Storage="_Student", ThisKey="Id_group", OtherKey="groupID")]
+		public EntitySet<Student> Student
+		{
+			get
+			{
+				return this._Student;
+			}
+			set
+			{
+				this._Student.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Group_Sub(Group_Sub entity)
+		{
+			this.SendPropertyChanging();
+			entity.Peopl = this;
+		}
+		
+		private void detach_Group_Sub(Group_Sub entity)
+		{
+			this.SendPropertyChanging();
+			entity.Peopl = null;
+		}
+		
+		private void attach_Student(Student entity)
+		{
+			this.SendPropertyChanging();
+			entity.Peopl = this;
+		}
+		
+		private void detach_Student(Student entity)
+		{
+			this.SendPropertyChanging();
+			entity.Peopl = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student")]
+	public partial class Student : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_student;
+		
+		private string _FIO;
+		
+		private string _mail;
+		
+		private System.Nullable<int> _groupID;
+		
+		private EntityRef<Peopl> _Peopl;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_studentChanging(int value);
+    partial void OnId_studentChanged();
+    partial void OnFIOChanging(string value);
+    partial void OnFIOChanged();
+    partial void OnmailChanging(string value);
+    partial void OnmailChanged();
+    partial void OngroupIDChanging(System.Nullable<int> value);
+    partial void OngroupIDChanged();
+    #endregion
+		
+		public Student()
+		{
+			this._Peopl = default(EntityRef<Peopl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_student", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_student
+		{
+			get
+			{
+				return this._Id_student;
+			}
+			set
+			{
+				if ((this._Id_student != value))
+				{
+					this.OnId_studentChanging(value);
+					this.SendPropertyChanging();
+					this._Id_student = value;
+					this.SendPropertyChanged("Id_student");
+					this.OnId_studentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FIO", DbType="NVarChar(50)")]
+		public string FIO
+		{
+			get
+			{
+				return this._FIO;
+			}
+			set
+			{
+				if ((this._FIO != value))
+				{
+					this.OnFIOChanging(value);
+					this.SendPropertyChanging();
+					this._FIO = value;
+					this.SendPropertyChanged("FIO");
+					this.OnFIOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NVarChar(50)")]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this.OnmailChanging(value);
+					this.SendPropertyChanging();
+					this._mail = value;
+					this.SendPropertyChanged("mail");
+					this.OnmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="Int")]
+		public System.Nullable<int> groupID
+		{
+			get
+			{
+				return this._groupID;
+			}
+			set
+			{
+				if ((this._groupID != value))
+				{
+					if (this._Peopl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OngroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._groupID = value;
+					this.SendPropertyChanged("groupID");
+					this.OngroupIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Peopl_Student", Storage="_Peopl", ThisKey="groupID", OtherKey="Id_group", IsForeignKey=true)]
+		public Peopl Peopl
+		{
+			get
+			{
+				return this._Peopl.Entity;
+			}
+			set
+			{
+				Peopl previousValue = this._Peopl.Entity;
+				if (((previousValue != value) 
+							|| (this._Peopl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Peopl.Entity = null;
+						previousValue.Student.Remove(this);
+					}
+					this._Peopl.Entity = value;
+					if ((value != null))
+					{
+						value.Student.Add(this);
+						this._groupID = value.Id_group;
+					}
+					else
+					{
+						this._groupID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Peopl");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

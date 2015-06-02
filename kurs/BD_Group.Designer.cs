@@ -43,7 +43,7 @@
             this.GV_BD_Group.Name = "GV_BD_Group";
             this.GV_BD_Group.Size = new System.Drawing.Size(240, 150);
             this.GV_BD_Group.TabIndex = 0;
-            this.GV_BD_Group.Click += new System.EventHandler(this.GV_BD_Group_Click);
+            this.GV_BD_Group.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_BD_Group_CellClick_1);
             // 
             // B_Add_Gr
             // 

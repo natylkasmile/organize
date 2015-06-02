@@ -20,3 +20,68 @@ D:\organize\kurs\obj\Debug\kurs.Form1.resources
 D:\organize\kurs\obj\Debug\kurs.Properties.Resources.resources
 D:\organize\kurs\obj\Debug\kurs.csproj.GenerateResource.Cache
 D:\organize\kurs\obj\Debug\kurs.ok_candel.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Lessons.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Student.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Theme.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Group_Sub.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Practice.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Subject.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Mark.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Schedule.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Theoria.resources
+D:\organize\kurs\obj\Debug\kurs.BD_Translate.resources
+D:\organize\kurs\obj\Debug\kurs.BD_T_Answ.resources
+D:\organize\kurs\obj\Debug\kurs.BD_T_Quest.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\bin\Debug\kurs.exe.config
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.exe
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.pdb
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\bin\Debug\kurs.exe
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\bin\Debug\kurs.pdb
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.csprojResolveAssemblyReference.cache
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Group.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Group_Sub.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Lessons.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Mark.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Practice.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Schedule.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Student.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Subject.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Theme.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Theoria.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_Translate.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_T_Answ.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.BD_T_Quest.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.Form1.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.ok_candel.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.Progress.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.Properties.Resources.resources
+C:\Users\Наташа\Desktop\Новая папка\kurs_11\kurs\obj\Debug\kurs.csproj.GenerateResource.Cache
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\bin\Debug\kurs.exe.config
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.exe
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.pdb
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\bin\Debug\kurs.exe
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\bin\Debug\kurs.pdb
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Group.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Group_Sub.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Lessons.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Mark.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Practice.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Schedule.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Student.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Subject.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Theme.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Theoria.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Translate.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_T_Answ.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_T_Quest.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Form1.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.ok_candel.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Progress.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Properties.Resources.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.csproj.GenerateResource.Cache
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.csprojResolveAssemblyReference.cache
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Otchet.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Save_rez.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\bin\Debug\itextsharp.dll
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.BD_Add_Stud.resources
+C:\Users\Наташа\Desktop\kurs_11 — копия\kurs\obj\Debug\kurs.Add_GR_Sub.resources
