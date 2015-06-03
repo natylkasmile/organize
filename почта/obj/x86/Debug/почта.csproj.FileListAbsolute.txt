@@ -1,0 +1,11 @@
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\bin\Debug\почта.exe
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\bin\Debug\почта.pdb
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.Properties.Resources.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.csproj.GenerateResource.Cache
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.exe
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.pdb
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.FormSend.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.FormTake.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.csprojResolveAssemblyReference.cache
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\obj\x86\Debug\почта.Form1.resources
+c:\users\svetlana\documents\visual studio 2010\Projects\почта\почта\bin\Debug\OpenPop.dll
